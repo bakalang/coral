@@ -24,7 +24,7 @@ import com.dosomething.util.ResponseUtils;
 import com.fasterxml.jackson.core.JsonGenerator;
 
 @SuppressWarnings("serial")
-@WebServlet(name = "nvd3_chart", value = "/service/nvd3_chart/*" )
+@WebServlet("/top")
 public class Nvd3ChartController extends HttpServlet {
 
 	@Override
@@ -43,14 +43,14 @@ public class Nvd3ChartController extends HttpServlet {
 		throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		try {
-			String pathInfo = RequestUtils.getPathInfo(request);
+//			String pathInfo = RequestUtils.getPathInfo(request);
 
-			if ("/top".equals(pathInfo)) {
+//			if ("/top".equals(pathInfo)) {
 				top(request, response, session);
-			} else {
-				System.err.println("incorrect pathInfo of " + pathInfo);
-				ResponseUtils.sendResponse(response, pathInfo + " is not supported");
-			}
+//			} else {
+//				System.err.println("incorrect pathInfo of " + pathInfo);
+//				ResponseUtils.sendResponse(response, pathInfo + " is not supported");
+//			}
 
 		} catch (Exception e) {
 			LogUtils.coral.error(e.getMessage(), e);
