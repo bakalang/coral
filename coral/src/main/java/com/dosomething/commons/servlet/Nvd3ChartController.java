@@ -24,7 +24,7 @@ import com.dosomething.util.ResponseUtils;
 import com.fasterxml.jackson.core.JsonGenerator;
 
 @SuppressWarnings("serial")
-@WebServlet("/service/nvd3_chart/*")
+@WebServlet(name = "nvd3_chart", value = "/service/nvd3_chart/*" )
 public class Nvd3ChartController extends HttpServlet {
 
 	@Override
